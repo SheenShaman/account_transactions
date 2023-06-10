@@ -4,3 +4,4 @@ venv
 .coverage
 logs
 *.log
+poetry.lock
