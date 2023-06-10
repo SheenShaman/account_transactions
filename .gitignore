@@ -1,1 +1,6 @@
 venv
+.idea
+.pytest_cache
+.coverage
+logs
+*.log
