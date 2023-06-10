@@ -1,4 +1,4 @@
-from utils import show_last_five, show_account
+from src.utils import executed_operations, show_account
 
 
 def main():
@@ -7,7 +7,7 @@ def main():
         <откуда> -> <куда>
         <сумма перевода> <валюта> """
 
-    operations = show_last_five()
+    operations = executed_operations()
     for i in operations:
         date_op = i["date"].split('-')
         date_format = date_op[2] + '.' + date_op[1] + '.' + date_op[0]
