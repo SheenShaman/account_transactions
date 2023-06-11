@@ -1,5 +1,7 @@
 import json
-operations_json = '/home/sheen/account_transactions/src/operations.json'
+import os
+
+operations_json = os.path.join('/home', 'sheen', 'account_transactions', 'src', 'operations.json')
 
 
 def load_operations(operations):

@@ -1,4 +1,7 @@
+import os
 from src.utils import load_operations, executed_operations, show_account
+
+operations_json = os.path.join('/home', 'sheen', 'account_transactions', 'src', 'data_test.json')
 
 
 def test_load_operations():
@@ -29,7 +32,7 @@ def test_load_operations():
             "date": "2019-11-05T12:04:13.781725"
         }
     ]
-    assert load_operations('/home/sheen/account_transactions/src/data_test.json') == from_file
+    assert load_operations(operations_json) == from_file
 
 
 def test_executed_operations():
