@@ -1,7 +1,4 @@
 import json
-import os
-
-operations_json = os.path.join('/home', 'sheen', 'account_transactions', 'src', 'operations.json')
 
 
 def load_operations(operations):
@@ -11,10 +8,9 @@ def load_operations(operations):
     return data
 
 
-def executed_operations():
+def executed_operations(data):
     """ Возвращает отфильтрованный список ПОСЛЕДНИХ ПЯТИ ВЫПОЛНЕННЫХ операций """
-
-    ex_operations = [item for item in load_operations(operations_json) if item.get('state') == 'EXECUTED']
+    ex_operations = [item for item in data if item.get('state') == 'EXECUTED']
     for i in ex_operations:
         # изменяет формат даты
         i['date'] = "".join(i['date'].split('T')[0])
