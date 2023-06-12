@@ -2,7 +2,6 @@ import os
 from src.utils import load_operations, executed_operations, show_account
 
 # путь до файлов json
-cwd = os.path.abspath('.')
 data_test = os.path.join(os.path.dirname(__file__), 'data_test.json')
 executed_data_test = os.path.join(os.path.dirname(__file__), 'executed_data_test.json')
 
