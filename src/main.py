@@ -1,4 +1,9 @@
-from src.utils import executed_operations, show_account
+import os
+from src.utils import load_operations, executed_operations, show_account
+
+# путь до файла json
+cwd = os.path.abspath('.')
+operations_json = os.path.join(cwd, 'operations.json')
 
 
 def main():
@@ -6,8 +11,8 @@ def main():
         <дата перевода> <описание перевода>
         <откуда> -> <куда>
         <сумма перевода> <валюта> """
-
-    operations = executed_operations()
+    data = load_operations(operations_json)
+    operations = executed_operations(data)
     for i in operations:
         date_op = i["date"].split('-')
         date_format = date_op[2] + '.' + date_op[1] + '.' + date_op[0]
